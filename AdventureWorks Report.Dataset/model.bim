@@ -23538,7 +23538,7 @@
               "",
               "DIVIDE(",
               "    [Total Orders], ",
-              "    [All Orders]",
+              "    [All Orders] * 2",
               ")"
             ],
             "formatString": "0.00%;-0.00%;0.00%",
