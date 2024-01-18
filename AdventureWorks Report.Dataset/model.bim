@@ -21282,10 +21282,10 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = Folder.Files(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\Sales Data\"),",
-          "    Navigation1 = Source{0}[Content]",
-          "in",
+          "let\r",
+          "    Source = Folder.Files(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\Sales Data\"),\r",
+          "    Navigation1 = Source{0}[Content]\r",
+          "in\r",
           "    Navigation1"
         ],
         "kind": "m",
@@ -21333,13 +21333,13 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = (Parameter1 as binary) => let",
-          "    Source = Csv.Document(Parameter1,[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
-          "in",
-          "    #\"Promoted Headers\"",
-          "in",
+          "let\r",
+          "    Source = (Parameter1 as binary) => let\r",
+          "    Source = Csv.Document(Parameter1,[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),\r",
+          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\r",
+          "in\r",
+          "    #\"Promoted Headers\"\r",
+          "in\r",
           "    Source"
         ],
         "kind": "m",
@@ -23535,10 +23535,10 @@
           {
             "name": "% of All Orders",
             "expression": [
-              "\r",
-              "DIVIDE(\r",
-              "    [Total Orders], \r",
-              "    [All Orders]\r",
+              "",
+              "DIVIDE(",
+              "    [Total Orders], ",
+              "    [All Orders]",
               ")"
             ],
             "formatString": "0.00%;-0.00%;0.00%",
