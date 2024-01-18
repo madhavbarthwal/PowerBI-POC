@@ -21261,12 +21261,12 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = Web.BrowserContents(\"https://en.wikipedia.org/wiki/List_of_asset_management_firms\"),",
-          "    #\"Extracted Table From Html\" = Html.Table(Source, {{\"Column1\", \"TABLE.sortable.wikitable > * > TR > :nth-child(1)\"}, {\"Column2\", \"TABLE.sortable.wikitable > * > TR > :nth-child(2)\"}, {\"Column3\", \"TABLE.sortable.wikitable > * > TR > :nth-child(3)\"}, {\"Column4\", \"TABLE.sortable.wikitable > * > TR > :nth-child(4)\"}}, [RowSelector=\"TABLE.sortable.wikitable > * > TR\"]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Extracted Table From Html\", [PromoteAllScalars=true]),",
-          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Rank\", Int64.Type}, {\"Firm/company\", type text}, {\"Country\", type text}, {\"AUM (billion USD)\", Int64.Type}})",
-          "in",
+          "let\r",
+          "    Source = Web.BrowserContents(\"https://en.wikipedia.org/wiki/List_of_asset_management_firms\"),\r",
+          "    #\"Extracted Table From Html\" = Html.Table(Source, {{\"Column1\", \"TABLE.sortable.wikitable > * > TR > :nth-child(1)\"}, {\"Column2\", \"TABLE.sortable.wikitable > * > TR > :nth-child(2)\"}, {\"Column3\", \"TABLE.sortable.wikitable > * > TR > :nth-child(3)\"}, {\"Column4\", \"TABLE.sortable.wikitable > * > TR > :nth-child(4)\"}}, [RowSelector=\"TABLE.sortable.wikitable > * > TR\"]),\r",
+          "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Extracted Table From Html\", [PromoteAllScalars=true]),\r",
+          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Rank\", Int64.Type}, {\"Firm/company\", type text}, {\"Country\", type text}, {\"AUM (billion USD)\", Int64.Type}})\r",
+          "in\r",
           "    #\"Changed Type\""
         ],
         "kind": "m",
@@ -21279,6 +21279,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Binary"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "expression": [
@@ -21314,10 +21318,10 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = Csv.Document(Parameter1,[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
-          "in",
+          "let\r",
+          "    Source = Csv.Document(Parameter1,[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),\r",
+          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\r",
+          "in\r",
           "    #\"Promoted Headers\""
         ],
         "kind": "m",
@@ -21394,10 +21398,10 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),",
-          "    mavenfuzzyfactory_development_order_item_refunds = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"order_item_refunds\"]}[Data]",
-          "in",
+          "let\r",
+          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),\r",
+          "    mavenfuzzyfactory_development_order_item_refunds = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"order_item_refunds\"]}[Data]\r",
+          "in\r",
           "    mavenfuzzyfactory_development_order_item_refunds"
         ],
         "kind": "m",
@@ -21417,10 +21421,10 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),",
-          "    mavenfuzzyfactory_development_order_items = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"order_items\"]}[Data]",
-          "in",
+          "let\r",
+          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),\r",
+          "    mavenfuzzyfactory_development_order_items = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"order_items\"]}[Data]\r",
+          "in\r",
           "    mavenfuzzyfactory_development_order_items"
         ],
         "kind": "m",
@@ -21440,10 +21444,10 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),",
-          "    mavenfuzzyfactory_development_orders = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"orders\"]}[Data]",
-          "in",
+          "let\r",
+          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),\r",
+          "    mavenfuzzyfactory_development_orders = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"orders\"]}[Data]\r",
+          "in\r",
           "    mavenfuzzyfactory_development_orders"
         ],
         "kind": "m",
@@ -21463,10 +21467,10 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),",
-          "    mavenfuzzyfactory_development_products = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"products\"]}[Data]",
-          "in",
+          "let\r",
+          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),\r",
+          "    mavenfuzzyfactory_development_products = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"products\"]}[Data]\r",
+          "in\r",
           "    mavenfuzzyfactory_development_products"
         ],
         "kind": "m",
@@ -21486,10 +21490,10 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),",
-          "    mavenfuzzyfactory_development_website_pageviews = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"website_pageviews\"]}[Data]",
-          "in",
+          "let\r",
+          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),\r",
+          "    mavenfuzzyfactory_development_website_pageviews = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"website_pageviews\"]}[Data]\r",
+          "in\r",
           "    mavenfuzzyfactory_development_website_pageviews"
         ],
         "kind": "m",
@@ -21509,10 +21513,10 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),",
-          "    mavenfuzzyfactory_development_website_sessions = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"website_sessions\"]}[Data]",
-          "in",
+          "let\r",
+          "    Source = MySQL.Database(#\"Server (Fuzzy Factory)\", #\"Database (Fuzzy Factory)\", [ReturnSingleDatabase=true]),\r",
+          "    mavenfuzzyfactory_development_website_sessions = Source{[Schema=#\"Database (Fuzzy Factory)\",Item=\"website_sessions\"]}[Data]\r",
+          "in\r",
           "    mavenfuzzyfactory_development_website_sessions"
         ],
         "kind": "m",
@@ -21779,7 +21783,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\AdventureWorks Territory Lookup.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\AdventureWorks Territory Lookup.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"SalesTerritoryKey\", Int64.Type}, {\"Region\", type text}, {\"Country\", type text}, {\"Continent\", type text}})",
                 "in",
@@ -22041,7 +22045,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\AdventureWorks Product Lookup.csv\"),[Delimiter=\",\", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\AdventureWorks Product Lookup.csv\"),[Delimiter=\",\", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ProductKey\", Int64.Type}, {\"ProductSubcategoryKey\", Int64.Type}, {\"ProductSKU\", type text}, {\"ProductName\", type text}, {\"ModelName\", type text}, {\"ProductDescription\", type text}, {\"ProductColor\", type text}, {\"ProductSize\", type text}, {\"ProductStyle\", type text}, {\"ProductCost\", type number}, {\"ProductPrice\", type number}}),",
                 "    #\"Changed to Currency\" = Table.TransformColumnTypes(#\"Changed Type\",{{\"ProductCost\", Currency.Type}, {\"ProductPrice\", Currency.Type}}),",
@@ -22065,6 +22069,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -22106,7 +22114,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\AdventureWorks Product Categories Lookup.csv\"),[Delimiter=\",\", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\AdventureWorks Product Categories Lookup.csv\"),[Delimiter=\",\", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ProductCategoryKey\", Int64.Type}, {\"CategoryName\", type text}})",
                 "in",
@@ -22123,6 +22131,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -22184,7 +22196,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\AdventureWorks Product Subcategories Lookup.csv\"),[Delimiter=\",\", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\AdventureWorks Product Subcategories Lookup.csv\"),[Delimiter=\",\", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ProductSubcategoryKey\", Int64.Type}, {\"SubcategoryName\", type text}, {\"ProductCategoryKey\", Int64.Type}})",
                 "in",
@@ -22201,6 +22213,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -22548,7 +22564,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\AdventureWorks Customer Lookup.csv\"),[Delimiter=\",\", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\AdventureWorks Customer Lookup.csv\"),[Delimiter=\",\", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CustomerKey\", Int64.Type}, {\"Prefix\", type text}, {\"FirstName\", type text}, {\"LastName\", type text}, {\"BirthDate\", type date}, {\"MaritalStatus\", type text}, {\"Gender\", type text}, {\"EmailAddress\", type text}, {\"AnnualIncome\", Int64.Type}, {\"TotalChildren\", Int64.Type}, {\"EducationLevel\", type text}, {\"Occupation\", type text}, {\"HomeOwner\", type text}}),",
                 "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Changed Type\", {\"CustomerKey\"}),",
@@ -22575,6 +22591,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -22869,7 +22889,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\AdventureWorks Calendar Lookup.csv\"),[Delimiter=\",\", Columns=1, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\AdventureWorks Calendar Lookup.csv\"),[Delimiter=\",\", Columns=1, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Date\", type date}}),",
                 "    #\"Inserted Day Name\" = Table.AddColumn(#\"Changed Type\", \"Day Name\", each Date.DayOfWeekName([Date]), type text),",
@@ -22894,6 +22914,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -23236,7 +23260,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Folder.Files(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\Sales Data\"),",
+                "    Source = Folder.Files(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\Sales Data\"),",
                 "    #\"Filtered Hidden Files1\" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),",
                 "    #\"Invoke Custom Function1\" = Table.AddColumn(#\"Filtered Hidden Files1\", \"Transform File\", each #\"Transform File\"([Content])),",
                 "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Invoke Custom Function1\", {\"Name\", \"Source.Name\"}),",
@@ -23352,7 +23376,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\AdventureWorks Returns Data.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\AdventureWorks Returns Data.csv\"),[Delimiter=\",\", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
                 "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ReturnDate\", type date}, {\"TerritoryKey\", Int64.Type}, {\"ProductKey\", Int64.Type}, {\"ReturnQuantity\", Int64.Type}})",
                 "in",
@@ -23369,6 +23393,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "lineageTag": "db70986a-7b87-4226-80dc-d72a2b2a16cb",
