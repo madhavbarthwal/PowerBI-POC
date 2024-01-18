@@ -23535,10 +23535,10 @@
           {
             "name": "% of All Orders",
             "expression": [
-              "\r",
-              "DIVIDE(\r",
-              "    [Total Orders], \r",
-              "    [All Orders]\r",
+              "",
+              "DIVIDE(",
+              "    [Total Orders], ",
+              "    [All Orders] * 2",
               ")"
             ],
             "formatString": "0.00%;-0.00%;0.00%",
