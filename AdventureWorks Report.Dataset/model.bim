@@ -21286,10 +21286,10 @@
           }
         ],
         "expression": [
-          "let\r",
-          "    Source = Folder.Files(\"C:\\Users\\ampar\\OneDrive\\Desktop\\Adventure Works Raw Data\\Sales Data\"),\r",
-          "    Navigation1 = Source{0}[Content]\r",
-          "in\r",
+          "let",
+          "    Source = Folder.Files(\"C:\\Users\\mb22938\\Desktop\\PBI\\AdventureWorks+Raw+Data\\AdventureWorks Raw Data\\Sales Data\"),",
+          "    Navigation1 = Source{0}[Content]",
+          "in",
           "    Navigation1"
         ],
         "kind": "m",
@@ -21334,16 +21334,20 @@
           {
             "name": "PBI_ResultType",
             "value": "Function"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "expression": [
-          "let\r",
-          "    Source = (Parameter1 as binary) => let\r",
-          "    Source = Csv.Document(Parameter1,[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),\r",
-          "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\r",
-          "in\r",
-          "    #\"Promoted Headers\"\r",
-          "in\r",
+          "let",
+          "    Source = (Parameter1 as binary) => let",
+          "        Source = Csv.Document(Parameter1,[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+          "        #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+          "    in",
+          "        #\"Promoted Headers\"",
+          "in",
           "    Source"
         ],
         "kind": "m",
